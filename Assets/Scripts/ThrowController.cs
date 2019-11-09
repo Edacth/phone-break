@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ThrowController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class ThrowController : MonoBehaviour
     Vector2 aimVector;
     public GameObject heldObject;
     public GameObject nearbyObject;
+    float warningOpacity;
+    public TextMeshProUGUI warningText;
     
     void Start()
     {
@@ -26,8 +29,17 @@ public class ThrowController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (nearbyObject == null) { return; }
-            heldObject = nearbyObject.GetComponent<Grabbable>().myPrefab;
-            GameObject.Destroy(nearbyObject);
+            Grabbable nearbyGrabbable = nearbyObject.GetComponent<Grabbable>();
+            if (nearbyGrabbable.vel.magnitude <= 0.01)
+            {
+               //Debug.Log(nearbyGrabbable.vel.magnitude);
+               heldObject = nearbyGrabbable.myPrefab;
+               GameObject.Destroy(nearbyObject);
+            }
+            else
+            {
+                warningOpacity = 1;
+            }
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -45,6 +57,12 @@ public class ThrowController : MonoBehaviour
         }
 
         Debug.DrawLine(transform.position, mouseWorldPoint, Color.red);
+
+        if (warningOpacity > 0)
+        {
+            warningOpacity -= 1f * Time.deltaTime;
+            warningText.alpha = warningOpacity;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -52,17 +70,22 @@ public class ThrowController : MonoBehaviour
         if (collision.gameObject.CompareTag("Grabbable"))
         {
             nearbyObject = collision.gameObject;
-            Debug.Log(collision.gameObject + " is nearby");
+            //Debug.Log(collision.gameObject + " is nearby");
         }
     }
 
-    private void OnGUI()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        GUILayout.BeginArea(new Rect(20, 20, 250, 120));
-        GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
-        //GUILayout.Label("Mouse position: " + mousePos);
-        GUILayout.Label("World position: " + mouseWorldPoint.ToString("F3"));
-        GUILayout.Label("aim Vector: " + aimVector.ToString("F3"));
-        GUILayout.EndArea();
+        nearbyObject = null;
     }
+
+    //private void OnGUI()
+    //{
+    //    GUILayout.BeginArea(new Rect(20, 20, 250, 120));
+    //    GUILayout.Label("Screen pixels: " + cam.pixelWidth + ":" + cam.pixelHeight);
+    //    //GUILayout.Label("Mouse position: " + mousePos);
+    //    GUILayout.Label("World position: " + mouseWorldPoint.ToString("F3"));
+    //    GUILayout.Label("aim Vector: " + aimVector.ToString("F3"));
+    //    GUILayout.EndArea();
+    //}
 }

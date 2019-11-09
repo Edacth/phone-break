@@ -8,7 +8,7 @@ using TMPro;
 public class UITimer : MonoBehaviour
 {
     // pauses the timer
-    public bool pause = false;
+    public static bool pause = false;
     // Text that displays the time
     public TextMeshProUGUI displayText;
     // Used for the time
@@ -18,11 +18,16 @@ public class UITimer : MonoBehaviour
     private void Start()
     {
         pause = true;
-        displayText.text = "";
+        displayText.text = time.ToString("F");
     }
     private void Update()
     {
         StartT();
+
+        if (Input.anyKeyDown)
+        {
+            pause = false;
+        }
     }
     // Just starts a timer and return that it 
     public bool StartT()
@@ -44,5 +49,10 @@ public class UITimer : MonoBehaviour
     public void BClick()
     {
         pause = false;
+    }
+
+    public static void SetPause(bool state)
+    {
+        pause = state;
     }
 }
