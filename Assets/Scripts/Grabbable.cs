@@ -16,6 +16,7 @@ public class Grabbable : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log(PhoneHealth.phoneHealth);
         rayStay = new bool[collisionRays.Length];
         animator = GetComponent<Animator>();
     }
@@ -28,13 +29,13 @@ public class Grabbable : MonoBehaviour
             
             LayerMask layerMask = 1 << 8; // Wall layer
             Vector2 PosXY = new Vector2(transform.position.x, transform.position.y);
-            Debug.DrawRay(PosXY + collisionRays[i].rayOffset, collisionRays[i].rayDir, Color.green);
+            //Debug.DrawRay(PosXY + collisionRays[i].rayOffset, collisionRays[i].rayDir, Color.green);
 
             RaycastHit2D rcHit = Physics2D.Raycast(PosXY + collisionRays[i].rayOffset, collisionRays[i].rayDir, collisionRays[i].rayDir.magnitude, layerMask);
 
             if (rcHit.collider != null)
             {
-                Debug.Log(i + " hit", rcHit.collider.gameObject);
+                //Debug.Log(i + " hit", rcHit.collider.gameObject);
                 if (rayStay[i] == false)
                 {
                     // Choose which dir to send it in

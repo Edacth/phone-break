@@ -26,7 +26,7 @@ public class ThrowController : MonoBehaviour
         mouseWorldPoint = cam.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, cam.nearClipPlane));
         aimVector = mouseWorldPoint - transform.position;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !PhoneHealth.broke)
         {
             if (nearbyObject == null) { return; }
             Grabbable nearbyGrabbable = nearbyObject.GetComponent<Grabbable>();

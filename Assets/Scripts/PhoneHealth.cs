@@ -13,7 +13,8 @@ public class PhoneHealth : MonoBehaviour
     bool won;
     float winWaitDelay = 0;
     public string nextLevel;
-
+    public static bool broke = false;
+    static Animator animator;
     void Start()
     {
         phoneHealth = startingHealth;
@@ -21,11 +22,27 @@ public class PhoneHealth : MonoBehaviour
 
     void Update()
     {
+        if(GameObject.FindGameObjectsWithTag("Grabbable").Length > 0)
+        {
+            animator = GameObject.FindGameObjectWithTag("Grabbable").GetComponent<Animator>();
+            if (phoneHealth <= 0)
+            {
+                animator.SetBool("fire",false);
+                animator.SetBool("broke",true);
+            }else
+            {
+                animator.SetBool("broke",false); 
+            }
+        }
         if (phoneHealth <= 0)
         {
             won = true;
             UITimer.SetPause(true);
             winText.gameObject.SetActive(true);
+            broke = true;
+        }else
+        {
+            broke = false;
         }
 
         if (won)
@@ -43,6 +60,13 @@ public class PhoneHealth : MonoBehaviour
 
     public static void TakeDamage(float damage)
     {
-        phoneHealth -= damage;
+        if(phoneHealth - damage <= 0)
+        {
+            phoneHealth = 0;
+        }
+        else
+        {
+            phoneHealth -= damage;
+        }
     }
 }
