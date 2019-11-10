@@ -38,7 +38,7 @@ public class PhoneHealth : MonoBehaviour
         {
             won = true;
             UITimer.SetPause(true);
-            winText.gameObject.SetActive(true);
+            winPanel.SetActive(true);
             broke = true;
         }else
         {
