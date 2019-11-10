@@ -1882,6 +1882,11 @@ PrefabInstance:
       propertyPath: level
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 941589482202353807, guid: f30b18cd903f7e749af7eeb161b0b63a,
+        type: 3}
+      propertyPath: prePanel
+      value: 
+      objectReference: {fileID: 2613362001092204492}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f30b18cd903f7e749af7eeb161b0b63a, type: 3}
 --- !u!1 &2128176058 stripped
@@ -2085,6 +2090,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19c4a415db2da64f9dfafee78792041, type: 3}
+--- !u!1 &2613362001092204492 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2412117468174365628, guid: b19c4a415db2da64f9dfafee78792041,
+    type: 3}
+  m_PrefabInstance: {fileID: 2613362001092204491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7207953347508719955
 PrefabInstance:
   m_ObjectHideFlags: 0

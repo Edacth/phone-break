@@ -15,6 +15,7 @@ public class UITimer : MonoBehaviour
     public float time;
     // Load Scene
     public string level;
+    public GameObject prePanel;
     private void Start()
     {
         pause = true;
@@ -27,6 +28,7 @@ public class UITimer : MonoBehaviour
         if (Input.anyKeyDown)
         {
             pause = false;
+            prePanel.SetActive(false);
         }
     }
     // Just starts a timer and return that it 
