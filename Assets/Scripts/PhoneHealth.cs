@@ -9,7 +9,7 @@ public class PhoneHealth : MonoBehaviour
     public float startingHealth;
     public static float phoneHealth;
     public TextMeshProUGUI healthText;
-    public TextMeshProUGUI winText;
+    public GameObject winPanel;
     bool won;
     float winWaitDelay = 0;
     public string nextLevel;
@@ -25,7 +25,7 @@ public class PhoneHealth : MonoBehaviour
         {
             won = true;
             UITimer.SetPause(true);
-            winText.gameObject.SetActive(true);
+            winPanel.gameObject.SetActive(true);
         }
 
         if (won)

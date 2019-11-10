@@ -1758,7 +1758,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   healthText: {fileID: 2063251101}
-  winText: {fileID: 2063251099}
+  winPanel: {fileID: 2063251099}
   nextLevel: Level 3
 --- !u!1001 &1689300399
 PrefabInstance:
@@ -2013,18 +2013,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19c4a415db2da64f9dfafee78792041, type: 3}
---- !u!114 &2063251099 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2613362000942726245, guid: b19c4a415db2da64f9dfafee78792041,
+--- !u!1 &2063251099 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1608669462, guid: b19c4a415db2da64f9dfafee78792041,
     type: 3}
   m_PrefabInstance: {fileID: 2063251098}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2063251100 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2613362000332038980, guid: b19c4a415db2da64f9dfafee78792041,

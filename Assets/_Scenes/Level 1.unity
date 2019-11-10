@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 20
   healthText: {fileID: 790094434}
-  winText: {fileID: 1479538367}
+  winPanel: {fileID: 1608669462}
   nextLevel: Level 2
 --- !u!4 &564889404 stripped
 Transform:
@@ -1106,16 +1106,6 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2613362000518691830, guid: b19c4a415db2da64f9dfafee78792041,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2613362000518691830, guid: b19c4a415db2da64f9dfafee78792041,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2613361999847005524, guid: b19c4a415db2da64f9dfafee78792041,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -1395,23 +1385,17 @@ PrefabInstance:
       objectReference: {fileID: 1882058328}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f30b18cd903f7e749af7eeb161b0b63a, type: 3}
---- !u!114 &1479538367 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2613362000942726245, guid: b19c4a415db2da64f9dfafee78792041,
-    type: 3}
-  m_PrefabInstance: {fileID: 913061739}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1544335341 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8585276321006281445, guid: d3f63491681050a48ab489339ec3cc54,
     type: 3}
   m_PrefabInstance: {fileID: 605216795}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1608669462 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1608669462, guid: b19c4a415db2da64f9dfafee78792041,
+    type: 3}
+  m_PrefabInstance: {fileID: 913061739}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1815210058
 GameObject:

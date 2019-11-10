@@ -30,7 +30,7 @@ public class RouterTime : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag(phoneTag) || active)
+        if(collision.gameObject.CompareTag(phoneTag) && active)
         {
             RouterText.transform.position = cam.WorldToScreenPoint(transform.position);
             uiTimer.time += timeIncrease;
