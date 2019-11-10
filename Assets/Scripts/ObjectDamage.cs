@@ -14,17 +14,19 @@ public class ObjectDamage : MonoBehaviour
     float damageTimer = 0.0f;
     // Boolean to check if it entered and exited the phone
     bool isColliding = false;
+    public bool EnablepersistentDamage = false;
+    bool theresFire = false;
     void Update()
     {
         // Changing the phone damage if its still on the phone with a delay
-        if(isColliding)
+        if(isColliding || theresFire)
         {
             damageTimer += Time.deltaTime;
             if(damageTimer >= damagePS)
             {
                 damageTimer = 0.0f;
                 PhoneHealth.TakeDamage(damage);
-                Debug.Log(PhoneHealth.phoneHealth);
+                //Debug.Log(PhoneHealth.phoneHealth);
             }
         }
     }
@@ -34,6 +36,10 @@ public class ObjectDamage : MonoBehaviour
         {
             Debug.Log("A");
             isColliding = true;
+            if (EnablepersistentDamage)
+            {
+                theresFire = true;
+            }
         }
     }
     void OnTriggerExit2D(Collider2D collision)

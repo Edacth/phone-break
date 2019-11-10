@@ -70,7 +70,7 @@ public class Grabbable : MonoBehaviour
 
         if (takeWallDamage)
         {
-            PhoneHealth.TakeDamage(5);
+            PhoneHealth.TakeDamage(3);
             takeWallDamage = false;
         }
     }

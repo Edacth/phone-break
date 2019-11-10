@@ -30,7 +30,7 @@ public class ThrowController : MonoBehaviour
         {
             if (nearbyObject == null) { return; }
             Grabbable nearbyGrabbable = nearbyObject.GetComponent<Grabbable>();
-            if (nearbyGrabbable.vel.magnitude <= 0.01)
+            if (nearbyGrabbable.vel.magnitude <= 0.02)
             {
                //Debug.Log(nearbyGrabbable.vel.magnitude);
                heldObject = nearbyGrabbable.myPrefab;

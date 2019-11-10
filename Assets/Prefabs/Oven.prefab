@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 956040116674950607}
   m_Layer: 0
   m_Name: Oven
-  m_TagString: Untagged
+  m_TagString: Oven
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,8 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneTag: Grabbable
-  damagePS: 1
-  damage: 5
+  damagePS: 0.1
+  damage: 2
 --- !u!61 &956040116674950607
 BoxCollider2D:
   m_ObjectHideFlags: 0

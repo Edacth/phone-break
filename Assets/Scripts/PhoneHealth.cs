@@ -38,7 +38,7 @@ public class PhoneHealth : MonoBehaviour
             SceneManager.LoadScene(nextLevel);
         }
 
-        healthText.text = "Health: " + phoneHealth + "%";
+        healthText.text = phoneHealth + "%";
     }
 
     public static void TakeDamage(float damage)

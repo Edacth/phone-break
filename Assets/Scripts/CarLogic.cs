@@ -10,6 +10,7 @@ public class CarLogic : MonoBehaviour
     public Vector3 carDir;
     // Speed for the car
     public float carSpeed = 0.0f;
+    bool started;
     void Start()
     {
         
@@ -17,10 +18,28 @@ public class CarLogic : MonoBehaviour
 
     void Update()
     {
-        delay -= Time.deltaTime;
-        if(delay <= 0)
+        if (Input.anyKeyDown)
         {
-            this.transform.Translate(carDir * Time.deltaTime * carSpeed);
+            started = true;
+        }
+
+        if (started)
+        {
+            delay -= Time.deltaTime;
+            if (delay <= 0)
+            {
+                this.transform.Translate(carDir * Time.deltaTime * carSpeed);
+            }
+        }
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grabbable"))
+        {
+            Debug.Log("A");
+            //PhoneHealth.TakeDamage(100);
         }
     }
 }
