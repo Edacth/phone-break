@@ -70,8 +70,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 709d2fe11f4d98c4093d66964de73542, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: af963224c7d869b47b2b57fe7b4be8ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   vel: {x: 0, y: 0}
   myPrefab: {fileID: 3362448130709093983, guid: 39b18251499bac740b42ab09e4353c75,
     type: 3}
+  takeWallDamage: 0
   collisionRays:
   - rayOffset: {x: 0.25, y: 0.2}
     rayDir: {x: 0.1, y: 0}

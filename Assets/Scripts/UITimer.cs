@@ -18,7 +18,7 @@ public class UITimer : MonoBehaviour
     private void Start()
     {
         pause = true;
-        displayText.text = time.ToString("F");
+        displayText.text = time.ToString("F") + "s";
     }
     private void Update()
     {
@@ -40,7 +40,7 @@ public class UITimer : MonoBehaviour
                 time = 0;
                 SceneManager.LoadScene(level);
             }
-            displayText.text = time.ToString("F");
+            displayText.text = time.ToString("F") + "s";
             return true;
         }
         else
