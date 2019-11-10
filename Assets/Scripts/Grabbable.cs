@@ -9,6 +9,7 @@ public class Grabbable : MonoBehaviour
     public GameObject myPrefab;
     float reboundModifier = 0.4f;
     public bool takeWallDamage;
+    Animator animator;
 
     public CollisionRay[] collisionRays;
     public bool[] rayStay;
@@ -16,6 +17,7 @@ public class Grabbable : MonoBehaviour
     private void Start()
     {
         rayStay = new bool[collisionRays.Length];
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -85,6 +87,11 @@ public class Grabbable : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             //vel = Vector2.zero;
+        }
+
+        if (collision.gameObject.CompareTag("Oven"))
+        {
+            animator.SetBool("fire", true);
         }
     }
 }

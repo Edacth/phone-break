@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Wall
   - Grabbable
+  - Oven
   layers:
   - Default
   - TransparentFX

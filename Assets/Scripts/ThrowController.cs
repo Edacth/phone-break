@@ -38,6 +38,7 @@ public class ThrowController : MonoBehaviour
             }
             else
             {
+                warningText.transform.position = cam.WorldToScreenPoint(transform.position);
                 warningOpacity = 1;
             }
         }
