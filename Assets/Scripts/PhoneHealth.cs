@@ -15,9 +15,11 @@ public class PhoneHealth : MonoBehaviour
     public string nextLevel;
     public static bool broke = false;
     static Animator animator;
+    AudioSource audioSource;
     void Start()
     {
         phoneHealth = startingHealth;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -34,9 +36,10 @@ public class PhoneHealth : MonoBehaviour
                 animator.SetBool("broke",false); 
             }
         }
-        if (phoneHealth <= 0)
+        if (phoneHealth <= 0 && !won)
         {
             won = true;
+            audioSource.Play();
             UITimer.SetPause(true);
             winPanel.SetActive(true);
             broke = true;

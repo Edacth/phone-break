@@ -10,6 +10,7 @@ public class Grabbable : MonoBehaviour
     float reboundModifier = 0.4f;
     public bool takeWallDamage;
     Animator animator;
+    AudioSource audioSource;
 
     public CollisionRay[] collisionRays;
     public bool[] rayStay;
@@ -19,6 +20,7 @@ public class Grabbable : MonoBehaviour
         Debug.Log(PhoneHealth.phoneHealth);
         rayStay = new bool[collisionRays.Length];
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -72,6 +74,8 @@ public class Grabbable : MonoBehaviour
         if (takeWallDamage)
         {
             PhoneHealth.TakeDamage(3);
+            audioSource.Play();
+            
             takeWallDamage = false;
         }
     }
